@@ -1,0 +1,43 @@
+class person:                                   #person 클래스 생성
+    def __init__(self, name, gender, age):       # 초기화 메서드
+        self.name = name                         # 속성 정의
+        self.gender = gender
+        self.age = age
+
+    def display(self):                                  #person 클래스의 display 메서드
+        return (f"""이름: {self.name} 성별: {self.gender}   #""" """ 은 줄바꿈
+나이: {self.age}""")
+
+    def greet(self):                                    #person 클래스의 greet 메서드
+        if self.age < 10:                               # 입력한 나이에 따라 다른 인사가 나오도록
+            return (f"안녕 꼬맹이")
+        elif self.age < 20:
+            return (f"안녕 학생")
+        else:
+            return (f"안녕하십니까")
+
+
+input_name = str(input(f"이름을 입력하세요"))       #input으로 값을 받은 후 문자열형으로 변환
+
+input_age = int(input(f"나이를 입력하세요"))        #input으로 값을 받은 후 정수형으로 변환
+
+while True:                                     #male, female 두 값만 받기 위해서 반복문+조건문
+    input_gender = str(input(f"성별을 입력하세요")) #input으로 값을 받은 후 문자열형으로 변환
+    if input_gender == "male":     # or "female"  이라고 쓰면 안되는건가(실행은 안됨)
+        
+        break                                   #male 값은 입력한 경우 반복문 종료
+
+    elif input_gender == "female":
+        
+        break                                   #female 값은 입력한 경우 반복문 종료
+    
+    else:                                           #다른값을 입력한 경우 다시 처음부터 반복
+        print(f"다시 입력하세요. male or female")
+            
+
+
+information = person(input_name, input_gender, input_age)   #객체생성, person 클래스에 속성값 입력
+
+print(information.display())                    #객체에 저장된 person 클래스의 display 메서드 표출
+
+print(information.greet())                      #객체에 저장된 person 클래스의 greet 메서드 표출
